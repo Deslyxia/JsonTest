@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.TreeMap;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -13,11 +14,11 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 public class Parser {
 
-    public ArrayList<HashMap<String, Object>> parseJsonFile (File jsonFile) {
-        ArrayList<HashMap<String, Object>> data = new ArrayList<HashMap<String, Object>>();
+    public ArrayList<TreeMap<String, Object>> parseJsonFile (File jsonFile) {
+        ArrayList<TreeMap<String, Object>> data = new ArrayList<>();
         ObjectMapper mapper = new ObjectMapper();
         try {
-            data = mapper.readValue(jsonFile, new TypeReference<ArrayList<HashMap<String, Object>>>(){});
+            data = mapper.readValue(jsonFile, new TypeReference<ArrayList<TreeMap<String, Object>>>(){});
         } catch (IOException e) {
             e.printStackTrace();
         }
