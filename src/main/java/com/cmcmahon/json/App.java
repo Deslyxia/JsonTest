@@ -1,5 +1,7 @@
 package com.cmcmahon.json;
 
+import com.cmcmahon.json.parser.Parser;
+
 /**
  * Hello world!
  *
@@ -8,6 +10,6 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Parser parser = new Parser();
     }
 }
