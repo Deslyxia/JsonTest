@@ -31,6 +31,16 @@ public class CommandLineUtil {
                 .build();
         options.addOption(inputFile);
 
+        Option csvInputFile = Option.builder("c")
+                .longOpt("csvFile")
+                .argName("INPUT_FILE_LOCATION")
+                .desc("Directory to find input files.")
+                .required(true)
+                .type(String.class)
+                .hasArg()
+                .build();
+        options.addOption(csvInputFile);
+
         Option outputFile = Option.builder("o")
                 .longOpt("outputfile")
                 .argName("OUTPUT_FILE_LOCATION")
